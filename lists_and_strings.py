@@ -34,14 +34,32 @@ def mangle(string):
     remove_3rd_last = remove_ith_character(remove_3rd_char, -3)
     reversed_final = remove_3rd_last[::-1]
 
-
     return reversed_final
 
-def main():
-    print(mangle("hellothere"))
-    print(mangle("42 degrees Celsius"))
-    print(mangle("eeeeeee"))
+def count_e(strings):
+    e_count = 0
+    for word in strings:
+        for letter in word:
+            if letter == "e" or letter == "E":
+                e_count += 1
+    return e_count
 
-    # print(remove_ith_character("hellothere", -3))
+def count_vowels(strings):
+    vowel_count = 0
+    for word in strings:
+        word_upper = word.upper()
+        for letter in word_upper:
+            if letter == "A" or letter == "E" or letter == "I" or letter == "O" or letter == "U":
+                vowel_count += 1
+
+    return vowel_count
+
+
+def main():
+    # print(mangle("hellothere"))
+    # print(mangle("42 degrees Celsius"))
+    # print(mangle("eeeeeee"))
+    print(count_e(["hi", "hello", "EEK!"]))
+    print(count_vowels(["hi", "hello", "OOF!"]))
 
 main()
