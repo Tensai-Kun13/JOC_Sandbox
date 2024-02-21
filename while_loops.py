@@ -36,17 +36,43 @@
 #         total += item
 #     return total
 
+def average_neg_evens(numbers):
+    i = 0
+    total = 0
+    counter = 0
+    while i < len(numbers):
+        if numbers[i] < 0 and numbers[i] % 2 == 0:
+            total += numbers[i]
+            counter += 1
+        i += 1
+    return total / counter
+
+def count_letter(strings, letter):
+    i = 0
+    letter = letter.upper()
+    counter = 0
+    while i < len(strings):
+        tempString = strings[i].upper()
+        counter += tempString.count(letter)
+        i += 1
+    return counter
+
 def main():
-    prompt = "Please enter a number (enter \"0\" when finished): "
-    entry = input(prompt)
-    responses = []
+    # prompt = "Please enter a number (enter \"0\" when finished): "
+    # entry = input(prompt)
+    # responses = []
+    #
+    # while entry != "0":
+    #     responses.append(int(entry))
+    #     entry = input(prompt)
+    #
+    # print(sorted(responses))
+    # print(f"The total of all input numbers is: {sum(responses)}")
+    # print(f"The average of all input numbers is: {sum(responses) / len(responses)}")
 
-    while entry != "0":
-        responses.append(int(entry))
-        entry = input(prompt)
+    # print(average_neg_evens([0, 1, 2, -2, -3, -4, 3, 4]))
 
-    print(sorted(responses))
-    print(f"The total of all input numbers is: {sum(responses)}")
-    print(f"The average of all input numbers is: {sum(responses) / len(responses)}")
+    list = ["HELLO", "goodbye", "1234 Oooh!"]
+    print(count_letter(list, "o"))
 
 main()
