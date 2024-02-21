@@ -30,28 +30,23 @@
 #     i += 1
 
 # 3
-def sum(list):
-    total = 0
-    for item in list:
-        total += item
-    return total
-
-def average(list):
-    return sum(list) / len(list)
+# def sum(list):
+#     total = 0
+#     for item in list:
+#         total += item
+#     return total
 
 def main():
-    entry = ""
+    prompt = "Please enter a number (enter \"0\" when finished): "
+    entry = input(prompt)
     responses = []
 
     while entry != "0":
-        entry = input("Please enter a number (enter \"0\" when finished): ")
-        if entry != "0":
-            responses.append(int(entry))
+        responses.append(int(entry))
+        entry = input(prompt)
 
-    total = sum(responses)
-    mean = average(responses)
-
-    print(f"The total of all input numbers is: {total}")
-    print(f"The average of all input numbers is: {mean}")
+    print(sorted(responses))
+    print(f"The total of all input numbers is: {sum(responses)}")
+    print(f"The average of all input numbers is: {sum(responses) / len(responses)}")
 
 main()
